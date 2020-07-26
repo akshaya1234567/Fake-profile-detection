@@ -1,12 +1,12 @@
-from django.urls import path
+"""FakeProfile URL Configuration
 
-from . import views
+The `urlpatterns` list routes URLs to views. 
 
-urlpatterns = [path("index.html", views.index, name="index"),
-	       path("Admin.html", views.Admin, name="Admin"),
-	       path("AdminLogin", views.AdminLogin, name="AdminLogin"),
-	       path("GenerateModel", views.GenerateModel, name="GenerateModel"),
-	       path("ViewTrain", views.ViewTrain, name="ViewTrain"),
-	       path("User.html", views.User, name="User"),
-	       path("UserCheck", views.UserCheck, name="UserCheck"),
+"""
+from django.contrib import admin
+from django.urls import path, include
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', include('Profile.urls')),
 ]
